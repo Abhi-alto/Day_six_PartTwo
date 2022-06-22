@@ -8,15 +8,17 @@ namespace PartTwo
 {
     internal class Util
     {
-        public static void sqrt(double c)
+        public static void tobin(int n)
         {
-            double t=c;
-            double epsilon= 1e-15;
-            while (Math.Abs(t - c / t) > epsilon * t)
+            String bin = "";
+            Console.Write("Binary of " + n + " is ");
+            while (n>0)
             {
-                t = (t + (c / t)) / 2;
+                bin = n % 2 + bin;
+                n = n / 2;
             }
-            Console.WriteLine("Square root of "+c+" is " + t);
+           
+            Console.Write(bin);
         }
     }
 }
