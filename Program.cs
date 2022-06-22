@@ -1,9 +1,5 @@
 ﻿using PartTwo;
-Console.WriteLine("Enter the principle amount");
-double P = Convert.ToDouble(Console.ReadLine());
-Console.WriteLine("Enter for how many years");
-int y = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the rate to be compounded monthly");
-double r = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter a non negative integer whose square root you want to find");
+double n = Convert.ToDouble(Console.ReadLine());
+Util.sqrt(n);
 
-Console.WriteLine("Payment to be made monthly is = " + Util.monthlyPayment(P,y,r));
