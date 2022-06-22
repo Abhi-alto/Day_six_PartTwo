@@ -8,18 +8,12 @@ namespace PartTwo
 {
     internal class Util
     {
-         public static double temperatureConversion(int ch,double convert_into)
+        public static double monthlyPayment(double p, int y,double R)
         {
-            double converted = 0;
-            if(ch==1)
-            {
-               converted= (convert_into * 9 / 5) +32 ;              //deg C to deg F
-            }
-            else
-            {
-                converted= (convert_into -32)*5/9;                  //deg F to deg C
-            }
-            return converted;
+            int n = 12 * y;
+            double r = R / 1200;
+             return (p * r / (1 - (Math.Pow((1 + r), -n))));  //payment to be made monthly
+
         }
     }
 }
