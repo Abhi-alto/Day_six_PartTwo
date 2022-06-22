@@ -8,13 +8,18 @@ namespace PartTwo
 {
     internal class Util
     {
-         public static void date(int d, int m, int y)
+         public static double temperatureConversion(int ch,double convert_into)
         {
-            int yy = y - ((14 - m) / 12);
-            int x = yy + yy / 4 + yy / 100 + yy / 400;
-            int mm = m + 12 * ((14 - m) / 12) - 2;
-            int dd = (d + x + ( 31*mm / 12)) % 7;
-            Console.WriteLine(dd);
+            double converted = 0;
+            if(ch==1)
+            {
+               converted= (convert_into * 9 / 5) +32 ;              //deg C to deg F
+            }
+            else
+            {
+                converted= (convert_into -32)*5/9;                  //deg F to deg C
+            }
+            return converted;
         }
     }
 }

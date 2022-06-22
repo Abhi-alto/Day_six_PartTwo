@@ -1,22 +1,14 @@
 ﻿using PartTwo;
-Console.WriteLine("Welcome to the day from date program");
-Console.WriteLine("Enter day of the month dd");
-int d = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the month mm");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter the year yyyy");
-int y = Convert.ToInt32(Console.ReadLine());
-int[] arr = new int[] { 31,28,31,30,31,30,31,31,30,31,30,31};
-if(y%400==0||(y%100!=0&&y%4==0))                        //If year is 1600 or the year is 1500 for leap year
+Console.WriteLine("Enter your choice : 1- Celsius to fahrenheit , 2- fahrenheit to Celsius");
+int choice = Convert.ToInt32(Console.ReadLine());
+
+if(choice!=1&&choice!=2)
 {
-    arr[1] = 29;
-}
-if (m >= 1 && m <=12 || y > 0 || d > 0 && d <= arr[m-1])
-{
-    Util.date(d,m,y);
+    Console.WriteLine("Wrong input");
 }
 else
 {
-    Console.WriteLine("Wrong input");
-
+    Console.WriteLine("Enter the value you want to convert");
+    double convert = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Converted value is = " + Util.temperatureConversion(choice,convert));
 }
